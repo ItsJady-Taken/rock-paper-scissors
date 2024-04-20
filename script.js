@@ -31,11 +31,11 @@ function getPlayerChoice() {
 
 
 function playRound(playerSelection, computerSelection) {  
-    // tie if have the same result
+    // tie, if have the same result
     if(playerSelection === computerSelection) {
         return("Round: Tie, no one win.");
     }
-    // if player choice rock
+    // if player choose rock
     else if(playerSelection == 'rock'){
         if(computerSelection == 'paper') {
             computerScore++;
@@ -47,7 +47,7 @@ function playRound(playerSelection, computerSelection) {
         }
         return playerScore, computerScore;
     }
-    // if player choice paper
+    // if player choose paper
     else if(playerSelection == 'paper'){
         if(computerSelection == 'scissors') {
             computerScore++;
@@ -60,7 +60,7 @@ function playRound(playerSelection, computerSelection) {
         }
         return playerScore, computerScore;
     }
-    // if player choice scissors
+    // if player choose scissors
     else if(playerSelection == 'scissors'){
         if(computerSelection == 'paper') { 
             playerScore++;
@@ -97,6 +97,7 @@ function playGame() {
     console.log("It's a TIE");
    }    
 }
+
 playGame()
 
 

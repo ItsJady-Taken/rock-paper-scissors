@@ -1,3 +1,35 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const rock = document.querySelector('#rock');
+    const paper = document.querySelector('#paper');
+    const scissors = document.querySelector('#scissors');
+
+    paper = document.addEventListener('click', ()=> {
+        const computerSelection = getComputerChoice();
+        const playerSelection = 'paper';
+        document.querySelector('#player').textContent = playerSelection;
+        document.querySelector('#computer').textContent = computerSelection;
+        document.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
+    })
+
+
+    rock = document.addEventListener('click', ()=> {
+        const computerSelection = getComputerChoice();
+        const playerSelection = 'rock';
+        document.querySelector('#player').textContent = playerSelection;
+        document.querySelector('#computer').textContent = computerSelection;
+        document.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
+    })
+
+    
+    scissors = document.addEventListener('click', ()=> {
+        const computerSelection = getComputerChoice();
+        const playerSelection = 'scissors';
+        document.querySelector('#player').textContent = playerSelection;
+        document.querySelector('#computer').textContent = computerSelection;
+        document.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
+    })
+ 
+})
 
 // Create a list of options 
 const options = ["rock", "paper", "scissors"]
@@ -98,6 +130,6 @@ function playGame() {
    }    
 }
 
-playGame()
+
 
 

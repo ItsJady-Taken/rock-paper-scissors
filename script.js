@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let round = 9;
     
     const rock = document.querySelector('#rock').addEventListener('click', ()=> {
         const computerSelection = getComputerChoice();

@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    let round = 9;
+    
     const rock = document.querySelector('#rock').addEventListener('click', ()=> {
         const computerSelection = getComputerChoice();
         const playerSelection = 'rock';
@@ -7,16 +9,27 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
         document.querySelector('#player-score').textContent = playerScore;
         document.querySelector('#computer-score').textContent = computerScore;
+        if(playerScore == 5 || computerScore == 5){
+            document.querySelector('#result').textContent = playGame();
+            document.querySelector('#btn').style.display = 'none';
+            document.querySelector('#end').textContent = 'Reload page to play again!';
+        }   
     })
 
     const paper = document.querySelector('#paper').addEventListener('click', ()=> {
+
         const computerSelection = getComputerChoice();
         const playerSelection = 'paper';
         document.querySelector('#player').textContent = playerSelection;
         document.querySelector('#computer').textContent = computerSelection;
         document.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
         document.querySelector('#player-score').textContent = playerScore;
-        document.querySelector('#computer-score').textContent = computerScore;
+        document.querySelector('#computer-score').textContent = computerScore;  
+        if(playerScore == 5 || computerScore == 5){
+            document.querySelector('#result').textContent = playGame();
+            document.querySelector('#btn').style.display = 'none';
+            document.querySelector('#end').textContent = 'Reload page to play again!';
+        }
     })
 
     const scissors = document.querySelector('#scissors').addEventListener('click', ()=> {
@@ -27,7 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
         document.querySelector('#player-score').textContent = playerScore;
         document.querySelector('#computer-score').textContent = computerScore;
+        if(playerScore == 5 || computerScore == 5){
+            document.querySelector('#result').textContent = playGame();
+            document.querySelector('#btn').style.display = 'none';
+            document.querySelector('#end').textContent = 'Reload page to play again!';
+        }
+        
     })
+    
    
 })
 
@@ -63,6 +83,7 @@ function getPlayerChoice() {
 
 
 function playRound(playerSelection, computerSelection) {  
+   
     // tie, if have the same result
     if(playerSelection === computerSelection) {
         return("Round: Tie, no one win.");
@@ -104,29 +125,21 @@ function playRound(playerSelection, computerSelection) {
         }
         return playerScore, computerScore;
     }  
+    
     return playerSelection, computerSelection;
 }
 
 // play five round of the game 
-function playGame() {
-   for(let i=0; i<5; i++) {
-    let playerSelection = getPlayerChoice();
-    let computerSelection = getComputerChoice();
-    console.log(`Player: ${playerSelection}`);
-    console.log(`Computer: ${computerSelection}`);
-    console.log(playRound(playerSelection, computerSelection));
-   }  
+function playGame() { 
  
-   console.log("GAME OVER")
-   console.log(`Player: ${playerScore} / computer: ${computerScore}`);
    if(playerScore > computerScore) {
-    console.log("Congratulation! YOU WIN!");
+    return "Congratulation! YOU WIN"
    }
     if(playerScore < computerScore) {
-    console.log("Too Bad! YOU LOSE!");
+    return "Too Bad! YOU LOSE!";
    }
    else {
-    console.log("It's a TIE");
+    return "It's a TIE";
    }    
 }
 

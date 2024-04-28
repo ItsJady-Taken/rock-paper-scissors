@@ -1,18 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const rock = document.querySelector('#rock');
-    const paper = document.querySelector('#paper');
-    const scissors = document.querySelector('#scissors');
-
-    paper = document.addEventListener('click', ()=> {
-        const computerSelection = getComputerChoice();
-        const playerSelection = 'paper';
-        document.querySelector('#player').textContent = playerSelection;
-        document.querySelector('#computer').textContent = computerSelection;
-        document.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
-    })
-
-
-    rock = document.addEventListener('click', ()=> {
+    const rock = document.querySelector('#rock').addEventListener('click', ()=> {
         const computerSelection = getComputerChoice();
         const playerSelection = 'rock';
         document.querySelector('#player').textContent = playerSelection;
@@ -20,8 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
     })
 
-    
-    scissors = document.addEventListener('click', ()=> {
+    const paper = document.querySelector('#paper').addEventListener('click', ()=> {
+        const computerSelection = getComputerChoice();
+        const playerSelection = 'paper';
+        document.querySelector('#player').textContent = playerSelection;
+        document.querySelector('#computer').textContent = computerSelection;
+        document.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
+    })
+
+    const scissors = document.querySelector('#scissors').addEventListener('click', ()=> {
         const computerSelection = getComputerChoice();
         const playerSelection = 'scissors';
         document.querySelector('#player').textContent = playerSelection;

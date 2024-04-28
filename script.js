@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#player').textContent = playerSelection;
         document.querySelector('#computer').textContent = computerSelection;
         document.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
+        document.querySelector('#player-score').textContent = playerScore;
+        document.querySelector('#computer-score').textContent = computerScore;
     })
 
     const paper = document.querySelector('#paper').addEventListener('click', ()=> {
@@ -13,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#player').textContent = playerSelection;
         document.querySelector('#computer').textContent = computerSelection;
         document.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
+        document.querySelector('#player-score').textContent = playerScore;
+        document.querySelector('#computer-score').textContent = computerScore;
     })
 
     const scissors = document.querySelector('#scissors').addEventListener('click', ()=> {
@@ -21,8 +25,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#player').textContent = playerSelection;
         document.querySelector('#computer').textContent = computerSelection;
         document.querySelector('#result').textContent = playRound(playerSelection, computerSelection);
+        document.querySelector('#player-score').textContent = playerScore;
+        document.querySelector('#computer-score').textContent = computerScore;
     })
- 
+   
 })
 
 // Create a list of options 
